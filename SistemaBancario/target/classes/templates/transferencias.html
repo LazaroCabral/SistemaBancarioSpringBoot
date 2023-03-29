@@ -1,0 +1,18 @@
+<!DOCKTYPE html>
+<meta charset="UTF-8">
+<html xmlns="//thymeleaf.org">
+	<head>
+	</head>
+	<body>
+		<form th:action="@{/transferir}" th:object="${requestTransferencias}" th:method="post">
+			<label for="conta">conta</label>
+			<input type="text" th:field="*{conta}"/>
+			<label for="valor">valor</label>
+			<input type="number" th:field="*{valor}"/>	
+			<input type="number" th:field="*{valorCentavos}"/>	
+			<button type="submit">transferir</button>	
+		</form>
+		<a th:href="${logout}">logout</a>
+		<p th:if="${mensagem}!=null" th:text="${mensagem}"></p>
+	</body>
+</html>

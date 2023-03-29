@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+	</head>
+	<body>
+		<h1>cadastre-se e ganhe 100,00 reais de bunus!!</h1>
+		<form th:action="@{/cadastrar}" th:object="${requestCadastro}" th:method="post">
+			<label for="nome">nome</label>
+			<input type="text" th:field="*{nome}"/>
+			<label for="senha">senha</label>
+			<input type="text" th:field="*{senha}"/>
+			<button type="submit">enviar</button>
+		</form>	
+		<a th:href="${login}">fazer login</a>
+		<p th:if="${mensagem}!=null" th:text="${mensagem}"></p>
+	</body>
+</html>
